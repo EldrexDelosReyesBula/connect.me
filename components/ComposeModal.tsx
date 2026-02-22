@@ -1,6 +1,59 @@
 import React, { useState } from 'react';
-import { ArrowLeft, Send, GraduationCap, User, X } from 'lucide-react';
+import { ArrowLeft, Send, GraduationCap, User, X, FileText } from 'lucide-react';
 import { ComposeModalProps } from '../types';
+
+const TEMPLATES = [
+  {
+    label: 'Meeting Request',
+    subject: 'Request for Meeting: [Your Name]',
+    body: 'Dear Eldrex,\n\nI would like to request a meeting with you to discuss [Topic]. Please let me know your availability for this week.\n\nBest regards,\n[Your Name]'
+  },
+  {
+    label: 'Project Inquiry',
+    subject: 'Inquiry regarding [Project Name]',
+    body: 'Hi Eldrex,\n\nI am reaching out to inquire about [Project Name]. I would like to know more about [Specific Question].\n\nThank you,\n[Your Name]'
+  },
+  {
+    label: 'Quick Question',
+    subject: 'Quick Question: [Topic]',
+    body: 'Hello Eldrex,\n\nI have a quick question regarding [Topic]. [Your Question here]\n\nThanks,\n[Your Name]'
+  },
+  {
+    label: 'Collaboration',
+    subject: 'Collaboration Opportunity: [Project/Idea]',
+    body: 'Hi Eldrex,\n\nI have an idea for a collaboration on [Project/Idea] and would love to hear your thoughts. Let me know if you are open to discussing this further.\n\nBest,\n[Your Name]'
+  },
+  {
+    label: 'Feedback',
+    subject: 'Feedback on [Topic/Project]',
+    body: 'Hi Eldrex,\n\nI wanted to share some feedback regarding [Topic/Project]. [Your Feedback here]\n\nBest regards,\n[Your Name]'
+  },
+  {
+    label: 'Introduction',
+    subject: 'Introduction: [Your Name]',
+    body: 'Hi Eldrex,\n\nMy name is [Your Name] and I am a [Your Role/Profession]. I came across your profile and wanted to connect because [Reason for connecting].\n\nLooking forward to staying in touch.\n\nBest,\n[Your Name]'
+  },
+  {
+    label: 'Job Opportunity',
+    subject: 'Job Opportunity: [Role] at [Company]',
+    body: 'Dear Eldrex,\n\nI am reaching out from [Company] regarding a potential opportunity for a [Role] position. We were impressed by your background and would love to discuss this further.\n\nPlease let me know if you are open to a brief chat.\n\nBest regards,\n[Your Name]'
+  },
+  {
+    label: 'Follow-up',
+    subject: 'Follow-up: [Previous Topic]',
+    body: 'Hi Eldrex,\n\nI hope this email finds you well.\n\nI am following up on our previous conversation regarding [Previous Topic]. [Any updates or questions].\n\nThanks,\n[Your Name]'
+  },
+  {
+    label: 'Recommendation',
+    subject: 'Request for Recommendation: [Your Name]',
+    body: 'Dear Eldrex,\n\nI hope you are doing well.\n\nI am currently applying for [Job/Program] and was hoping you might be willing to write a letter of recommendation on my behalf, given our experience working together on [Project/Class].\n\nThank you for your time and consideration.\n\nBest regards,\n[Your Name]'
+  },
+  {
+    label: 'Thank You',
+    subject: 'Thank You!',
+    body: 'Hi Eldrex,\n\nI just wanted to send a quick note to say thank you for [Reason for thanking]. I really appreciate your time and help.\n\nBest,\n[Your Name]'
+  }
+];
 
 const ComposeModal: React.FC<ComposeModalProps> = ({ isOpen, onClose }) => {
   const [subject, setSubject] = useState('');
@@ -68,6 +121,26 @@ const ComposeModal: React.FC<ComposeModalProps> = ({ isOpen, onClose }) => {
       {/* Content */}
       <div className="flex-1 overflow-y-auto p-4 sm:p-6 sm:max-w-2xl sm:mx-auto w-full flex flex-col gap-6">
         
+        {/* Templates Section */}
+        <div className="flex flex-col gap-2">
+          <label className="text-xs font-medium text-[#44473f] px-1">Quick Templates</label>
+          <div className="flex overflow-x-auto gap-2 pb-2 scrollbar-hide">
+            {TEMPLATES.map((template, idx) => (
+              <button
+                key={idx}
+                onClick={() => {
+                  setSubject(template.subject);
+                  setBody(template.body);
+                }}
+                className="flex items-center gap-2 shrink-0 px-4 py-2 bg-[#e2e3dd] hover:bg-[#d5d6d0] active:scale-95 rounded-full text-sm text-[#1b1c17] transition-all duration-200"
+              >
+                <FileText className="w-4 h-4 text-[#44473f]" />
+                {template.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
         {/* Filled Text Field: Subject */}
         <div className="relative group bg-[#e2e3dd] rounded-t-[16px] rounded-b-[4px] border-b border-[#74796d] px-4 py-3 transition-colors hover:bg-[#d5d6d0] focus-within:bg-[#d5d6d0] focus-within:border-primary">
             <label className="block text-xs font-medium text-[#44473f] mb-1 transition-colors group-focus-within:text-primary">Subject</label>

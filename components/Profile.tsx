@@ -28,17 +28,9 @@ const Profile: React.FC = () => {
     <div className="flex flex-col items-center justify-center mb-10 text-center px-4 w-full">
       <style>
         {`
-          @keyframes morph {
-            0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
-            100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-          }
           @keyframes breathe {
             0%, 100% { transform: scale(1.1); opacity: 0.4; }
             50% { transform: scale(1.15); opacity: 0.3; }
-          }
-          .animate-morph {
-            animation: morph 8s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
           }
           .animate-breathe {
             animation: breathe 4s ease-in-out infinite;
@@ -60,10 +52,10 @@ const Profile: React.FC = () => {
       {/* Profile Image Container - Floating animation removed */}
       <div className="relative group mb-4 z-10">
         {/* Background Glow */}
-        <div className="absolute inset-0 bg-[#bbf7d0] animate-morph animate-breathe blur-2xl"></div>
+        <div className="absolute inset-0 bg-[#bbf7d0] rounded-[32px] animate-breathe blur-2xl"></div>
         
         {/* Image Container with Border */}
-        <div className="relative w-36 h-36 animate-morph overflow-hidden border-[4px] border-[#fdfdf6] shadow-xl z-10 bg-[#e2e3dd] transition-transform duration-500 cubic-bezier(0.34, 1.56, 0.64, 1) hover:scale-105 active:scale-95">
+        <div className="relative w-36 h-36 rounded-[32px] overflow-hidden border-[4px] border-[#fdfdf6] shadow-xl z-10 bg-[#e2e3dd] transition-transform duration-500 cubic-bezier(0.34, 1.56, 0.64, 1) hover:scale-105 active:scale-95">
           <img 
             src="https://eldrex.landecs.org/squad/eldrex.png" 
             alt="Profile" 
@@ -72,11 +64,11 @@ const Profile: React.FC = () => {
         </div>
       </div>
       
-      <h2 className="text-[28px] leading-tight font-normal text-[#1b1c17] tracking-tight mt-2 animate-in slide-in-from-bottom-4 duration-700 ease-out fill-mode-backwards" style={{animationDelay: '100ms'}}>
+      <h2 className="text-[32px] font-display leading-tight font-medium text-[#1b1c17] tracking-tight mt-2 animate-in slide-in-from-bottom-4 duration-700 ease-out fill-mode-backwards" style={{animationDelay: '100ms'}}>
         Eldrex Delos Reyes Bula
       </h2>
       
-      <p className="mt-3 text-base text-[#44473f] font-normal leading-relaxed max-w-[280px] animate-in slide-in-from-bottom-4 duration-700 ease-out fill-mode-backwards" style={{animationDelay: '200ms'}}>
+      <p className="mt-3 text-[16px] text-[#44473f] font-normal leading-relaxed max-w-[280px] animate-in slide-in-from-bottom-4 duration-700 ease-out fill-mode-backwards" style={{animationDelay: '200ms'}}>
         “When nothing moves, everything begins”
       </p>
     </div>
