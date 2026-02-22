@@ -3,6 +3,7 @@ import { ArrowLeft, Send, GraduationCap, User, X, FileText } from 'lucide-react'
 import { ComposeModalProps } from '../types';
 
 const TEMPLATES = [
+  // PROFESSIONAL TEMPLATES
   {
     label: 'Meeting Request',
     subject: 'Request for Meeting: [Your Name]',
@@ -14,24 +15,9 @@ const TEMPLATES = [
     body: 'Hi Eldrex,\n\nI am reaching out to inquire about [Project Name]. I would like to know more about [Specific Question].\n\nThank you,\n[Your Name]'
   },
   {
-    label: 'Quick Question',
-    subject: 'Quick Question: [Topic]',
-    body: 'Hello Eldrex,\n\nI have a quick question regarding [Topic]. [Your Question here]\n\nThanks,\n[Your Name]'
-  },
-  {
     label: 'Collaboration',
     subject: 'Collaboration Opportunity: [Project/Idea]',
     body: 'Hi Eldrex,\n\nI have an idea for a collaboration on [Project/Idea] and would love to hear your thoughts. Let me know if you are open to discussing this further.\n\nBest,\n[Your Name]'
-  },
-  {
-    label: 'Feedback',
-    subject: 'Feedback on [Topic/Project]',
-    body: 'Hi Eldrex,\n\nI wanted to share some feedback regarding [Topic/Project]. [Your Feedback here]\n\nBest regards,\n[Your Name]'
-  },
-  {
-    label: 'Introduction',
-    subject: 'Introduction: [Your Name]',
-    body: 'Hi Eldrex,\n\nMy name is [Your Name] and I am a [Your Role/Profession]. I came across your profile and wanted to connect because [Reason for connecting].\n\nLooking forward to staying in touch.\n\nBest,\n[Your Name]'
   },
   {
     label: 'Job Opportunity',
@@ -39,19 +25,63 @@ const TEMPLATES = [
     body: 'Dear Eldrex,\n\nI am reaching out from [Company] regarding a potential opportunity for a [Role] position. We were impressed by your background and would love to discuss this further.\n\nPlease let me know if you are open to a brief chat.\n\nBest regards,\n[Your Name]'
   },
   {
-    label: 'Follow-up',
-    subject: 'Follow-up: [Previous Topic]',
-    body: 'Hi Eldrex,\n\nI hope this email finds you well.\n\nI am following up on our previous conversation regarding [Previous Topic]. [Any updates or questions].\n\nThanks,\n[Your Name]'
-  },
-  {
-    label: 'Recommendation',
+    label: 'Recommendation Request',
     subject: 'Request for Recommendation: [Your Name]',
     body: 'Dear Eldrex,\n\nI hope you are doing well.\n\nI am currently applying for [Job/Program] and was hoping you might be willing to write a letter of recommendation on my behalf, given our experience working together on [Project/Class].\n\nThank you for your time and consideration.\n\nBest regards,\n[Your Name]'
+  },
+
+  // EDUCATIONAL TEMPLATES
+  {
+    label: 'Class Question (English)',
+    subject: 'Question about [Subject/Topic]',
+    body: 'Hi [Classmate Name],\n\nI just wanted to ask if we have any updates or assignments for [Subject/Topic]. Also, do you know if we have a Google Classroom or group chat for this subject?\n\nThanks!\n[Your Name]'
+  },
+  {
+    label: 'Class Question (Tagalog)',
+    subject: 'Tanong tungkol sa [Subject/Topic]',
+    body: 'Hi [Classmate Name],\n\nGusto ko lang itanong kung may updates o assignments tayo sa [Subject/Topic]. Alam mo ba kung may Google Classroom o group chat tayo para dito?\n\nSalamat!\n[Your Name]'
+  },
+  {
+    label: 'Homework Help / Clarification',
+    subject: 'Help with [Assignment/Topic]',
+    body: 'Hello [Classmate Name],\n\nCan you help me understand [Assignment/Topic]? I am having some difficulty and would really appreciate your guidance.\n\nThanks in advance!\n[Your Name]'
+  },
+  {
+    label: 'Group Project Invite',
+    subject: 'Invitation to join [Project Name] Group',
+    body: 'Hi [Classmate Name],\n\nI am forming a group for [Project Name] and would like to know if you are interested in joining. We can discuss the tasks and deadlines together.\n\nLet me know!\n[Your Name]'
+  },
+  {
+    label: 'Teacher/Instructor Inquiry',
+    subject: 'Question regarding [Class/Topic]',
+    body: 'Dear [Teacher Name],\n\nI hope you are doing well. I have a question regarding [Class/Topic] and would like to clarify [Specific Question].\n\nThank you for your time.\n[Your Name]'
+  },
+
+  // PERSONAL TEMPLATES
+  {
+    label: 'Friendly Message (English)',
+    subject: 'Hey [Friend Name]!',
+    body: 'Hi [Friend Name],\n\nJust wanted to check in and see how you are doing. Also, wanted to ask if you are free to hang out or chat sometime soon!\n\nCheers,\n[Your Name]'
+  },
+  {
+    label: 'Friendly Message (Tagalog)',
+    subject: 'Kumusta [Friend Name]!',
+    body: 'Hi [Friend Name],\n\nKumusta ka na? Gusto ko lang mag-check in at malaman kung free ka para mag-chat o magkita soon!\n\nIngat,\n[Your Name]'
+  },
+  {
+    label: 'Casual Question to Stranger / Classmate',
+    subject: 'Quick Question: [Topic]',
+    body: 'Hi [Name],\n\nSorry to bother you, but I just wanted to ask [Your Question]. Hope you can help!\n\nThanks,\n[Your Name]'
   },
   {
     label: 'Thank You',
     subject: 'Thank You!',
-    body: 'Hi Eldrex,\n\nI just wanted to send a quick note to say thank you for [Reason for thanking]. I really appreciate your time and help.\n\nBest,\n[Your Name]'
+    body: 'Hi [Name],\n\nI just wanted to send a quick note to say thank you for [Reason]. I really appreciate your help and time.\n\nBest,\n[Your Name]'
+  },
+  {
+    label: 'Follow-Up',
+    subject: 'Follow-Up: [Previous Topic]',
+    body: 'Hi [Name],\n\nI hope this message finds you well. I just wanted to follow up on [Previous Topic] and see if there are any updates.\n\nThanks!\n[Your Name]'
   }
 ];
 
